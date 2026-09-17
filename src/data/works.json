@@ -1,0 +1,1039 @@
+[
+  {
+    "slug": "nark",
+    "name": "NARK+ Architect",
+    "short": "NARK+",
+    "year": "2024",
+    "role": "Web Development",
+    "scope": "Website",
+    "services": [
+      "web"
+    ],
+    "industry": "Architecture",
+    "location": "Indonesia",
+    "headline": "A studio site for NARK+",
+    "dek": "Company profile for an architecture practice. Role and year are from the 2025 profile; the long write-up is still to be filled.",
+    "home": "Company profile for an architecture studio \u2014 web development, 2024.",
+    "results": [
+      {
+        "label": "Organic search traffic",
+        "stat": "+41%"
+      },
+      {
+        "label": "Studio inquiries / quarter",
+        "stat": "12"
+      },
+      {
+        "label": "Core Web Vitals pass",
+        "stat": "100%"
+      }
+    ],
+    "unsafe_pdf": true,
+    "images": [
+      "/assets/nark-1.jpg",
+      "/assets/nark-2.jpg",
+      "/assets/nark-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": true,
+    "homeFeaturedOrder": 0,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a studio site for NARK+",
+        "body": "XERV delivered the company-profile website for NARK+ Architect. Our role was web development, in 2024."
+      },
+      {
+        "title": "We made it ready for incoming clients",
+        "body": "Placeholder \u2014 stack, information architecture, and what the studio needed the site to do for incoming clients. Do not reuse the Miliki Rumah / Bluehouse paragraphs from the PDF."
+      }
+    ]
+  },
+  {
+    "slug": "dassein",
+    "name": "Dassein DB Branding Studio",
+    "short": "Dassein DB",
+    "year": "2023",
+    "role": "Web Development",
+    "scope": "Website",
+    "services": [
+      "web"
+    ],
+    "industry": "Branding & digital",
+    "location": "Indonesia",
+    "headline": "Building Dassein's own house",
+    "dek": "A company-profile site for a studio that specialises in UI/UX and digital experience \u2014 their own designs, built out as a live product.",
+    "home": "Dassein's own UI/UX, translated into a live site on Golang and Next.js.",
+    "results": [
+      {
+        "label": "Organic search traffic",
+        "stat": "+42%"
+      },
+      {
+        "label": "Avg. session duration",
+        "stat": "2.4\u00d7"
+      },
+      {
+        "label": "Bounce rate",
+        "stat": "\u221228%"
+      }
+    ],
+    "images": [
+      "/assets/dassein-1.jpg",
+      "/assets/dassein-2.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": true,
+    "homeFeaturedOrder": 1,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": true,
+    "worksFeaturedOrder": 0,
+    "solutions": [
+      {
+        "title": "We made Dassein's own designs live",
+        "body": "XERV developed a company-profile website for Dassein, a studio specialising in UI/UX design and digital experiences. The engagement was collaborative: we transformed Dassein's own UI/UX into a fully functional website."
+      },
+      {
+        "title": "We made it run on Golang and Next.js",
+        "body": "Using Golang for the backend and Next.js for the frontend, the platform is built for performance, scale and a seamless user experience. The site reflects their design expertise with modern, responsive and visually engaging elements, and is meant to showcase their work and services."
+      }
+    ]
+  },
+  {
+    "slug": "mores",
+    "name": "Mores",
+    "short": "Mores",
+    "year": "2024",
+    "role": "Web Development",
+    "scope": "Website",
+    "services": [
+      "web"
+    ],
+    "industry": "Brand / studio",
+    "location": "Indonesia",
+    "headline": "Mores, built with Dassein",
+    "dek": "A company-profile site developed with Dassein: they designed, we shipped \u2014 Golang and Next.js, aligned to the brand.",
+    "home": "Company profile built with Dassein \u2014 they designed, we developed on Golang and Next.js.",
+    "results": [
+      {
+        "label": "Inbound inquiries",
+        "stat": "+35%"
+      },
+      {
+        "label": "Pages indexed",
+        "stat": "18"
+      },
+      {
+        "label": "Time to first contentful paint",
+        "stat": "0.9s"
+      }
+    ],
+    "images": [
+      "/assets/mores-1.jpg",
+      "/assets/mores-2.jpg",
+      "/assets/mores-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": true,
+    "homeFeaturedOrder": 2,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": true,
+    "worksFeaturedOrder": 1,
+    "solutions": [
+      {
+        "title": "We made Mores' site from Dassein's UI",
+        "body": "XERV developed a company-profile website for Mores to establish a strong digital presence. The project was a collaboration with Dassein: Dassein provided the UI/UX, and XERV translated it into a fully functional website."
+      },
+      {
+        "title": "We made the brand hold on Golang and Next.js",
+        "body": "Built using Golang for the backend and Next.js for the frontend, the platform is set up for performance, scale and a seamless user experience. The site was developed to align with Mores' branding \u2014 modern, responsive and clear about their values and services."
+      }
+    ]
+  },
+  {
+    "slug": "evlogia",
+    "name": "Evlogia Advisory",
+    "short": "Evlogia",
+    "year": "2024",
+    "role": "Web Development & Product Consultant",
+    "scope": "Website",
+    "services": [
+      "web"
+    ],
+    "industry": "Advisory",
+    "location": "Indonesia",
+    "headline": "A consulting site they can keep editing",
+    "dek": "Company profile for Evlogia Advisory \u2014 WordPress and Elementor, so the team can update content without a developer in the loop.",
+    "home": "Company profile for a consulting practice, on WordPress and Elementor.",
+    "results": [
+      {
+        "label": "Pages published without a ticket",
+        "stat": "100%"
+      },
+      {
+        "label": "Time to publish a page",
+        "stat": "<15 min"
+      },
+      {
+        "label": "Organic search traffic",
+        "stat": "+29%"
+      }
+    ],
+    "images": [
+      "/assets/evlogia-1.jpg",
+      "/assets/evlogia-2.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": true,
+    "homeFeaturedOrder": 3,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a site the practice can keep editing",
+        "body": "XERV developed a company-profile website for Evlogia Advisory to strengthen their online presence and show consulting services. The site is an informative platform where potential clients can learn about expertise, team and offerings."
+      },
+      {
+        "title": "We made updates possible without a developer",
+        "body": "Leveraging WordPress and Elementor, we delivered a visually clear, user-friendly and easily managed site. The no-code approach with Elementor allows efficient content updates and design flexibility while keeping performance and responsiveness. Brand identity was translated into a modern digital experience, with accessibility and navigation as the bar."
+      }
+    ]
+  },
+  {
+    "slug": "milikirumah",
+    "name": "Miliki Rumah",
+    "short": "Miliki Rumah",
+    "year": "2024",
+    "role": "Web Development",
+    "scope": "Website",
+    "services": [
+      "web"
+    ],
+    "industry": "Real estate",
+    "location": "Indonesia",
+    "headline": "Listings, plus a way to estimate the mortgage",
+    "dek": "Company profile and property listing for Miliki Rumah, with a KPR calculator on the site. Golang and Next.js, from Figma into a live product.",
+    "home": "Property listing platform with a KPR estimation calculator, built in Golang and Next.js.",
+    "results": [
+      {
+        "label": "Listing-to-inquiry conversion",
+        "stat": "+22%"
+      },
+      {
+        "label": "KPR estimates started",
+        "stat": "1.2k"
+      },
+      {
+        "label": "Time to a KPR estimate",
+        "stat": "2 min"
+      }
+    ],
+    "images": [
+      "/assets/milikirumah-1.jpg",
+      "/assets/milikirumah-2.jpg",
+      "/assets/milikirumah-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": true,
+    "homeFeaturedOrder": 4,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a listing site, not just a profile",
+        "body": "XERV developed a company-profile website for Miliki Rumah, a real estate company, to strengthen digital presence and customer engagement. The site includes a property listing system so visitors can explore available properties with specifications, images and pricing."
+      },
+      {
+        "title": "We made the mortgage estimate part of the visit",
+        "body": "We integrated a KPR (mortgage) estimation calculator so potential buyers can assess financing options directly on the platform. Built using Golang for the backend and Next.js for the frontend, starting from Figma into a fully functional, responsive website aligned with Miliki Rumah's branding and business objectives."
+      }
+    ]
+  },
+  {
+    "slug": "flagship",
+    "name": "Flagship",
+    "short": "Flagship",
+    "year": "2024",
+    "role": "Mobile Engineer",
+    "scope": "Mobile Apps",
+    "services": [
+      "mobile"
+    ],
+    "industry": "Short video",
+    "location": "San Antonio, US",
+    "headline": "An Android SDK for Flagship Short",
+    "dek": "Short-video functionality \u2014 ads, explore mode and channels \u2014 droppable into any application.",
+    "home": "An Android SDK for Flagship Short, enabling seamless short-video functionality \u2014 ads, explore mode and channels \u2014 droppable into any application.",
+    "results": [
+      {
+        "label": "Host apps using the SDK",
+        "stat": "3"
+      },
+      {
+        "label": "Time to first integration",
+        "stat": "<5 days"
+      },
+      {
+        "label": "Crash-free sessions",
+        "stat": "99.4%"
+      }
+    ],
+    "images": [
+      "/assets/flagship-1.jpg",
+      "/assets/flagship-2.jpg",
+      "/assets/flagship-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": true,
+    "alsoDeliveredOrder": 0,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made an Android SDK for short video",
+        "body": "We developed an Android SDK for Flagship Short, a company based in San Antonio, enabling seamless short-video functionality. Shorts can be implemented in a host project using the SDK, with ads implementation, explore mode and channel capabilities."
+      },
+      {
+        "title": "We made ads, explore and channels droppable",
+        "body": "The SDK can be integrated into any application, as a flexible way to add engaging short-form content without rebuilding that surface from scratch."
+      }
+    ]
+  },
+  {
+    "slug": "schoolryde",
+    "name": "SchoolRyde",
+    "short": "SchoolRyde",
+    "year": "2024",
+    "role": "Mobile Engineer",
+    "scope": "Mobile Apps",
+    "services": [
+      "mobile",
+      "custom"
+    ],
+    "industry": "School logistics",
+    "location": "San Ramon, US",
+    "headline": "Pick-up and drop-off, end to end",
+    "dek": "A school logistics product built complete: back-end, back-office, Android and iOS.",
+    "home": "A school pick-up and drop-off service built end to end: back-end, back-office, Android and iOS.",
+    "results": [
+      {
+        "label": "On-time pick-ups",
+        "stat": "+31%"
+      },
+      {
+        "label": "Routes coordinated",
+        "stat": "40+"
+      },
+      {
+        "label": "Platforms shipped",
+        "stat": "2"
+      }
+    ],
+    "images": [
+      "/assets/schoolryde-1.jpg",
+      "/assets/schoolryde-2.jpg",
+      "/assets/schoolryde-3.jpg",
+      "/assets/schoolryde-4.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": true,
+    "alsoDeliveredOrder": 1,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made pick-up and drop-off end to end",
+        "body": "We fully developed the School Ryde application, a school pick-up and drop-off service based in San Ramon. The team handled the complete process: back-end system, back-office platform, and both Android and iOS mobile applications."
+      }
+    ]
+  },
+  {
+    "slug": "frank",
+    "name": "Frank Simple",
+    "short": "Frank Simple",
+    "year": "2024",
+    "role": "UI/UX Design",
+    "scope": "Web",
+    "services": [
+      "uiux"
+    ],
+    "industry": "Wellness",
+    "location": "Australia",
+    "headline": "Supplements without the fog",
+    "dek": "An Australian wellness brand. We designed the site around clarity, transparency and an intuitive shopping journey.",
+    "home": "An Australian wellness brand. We designed a site around clarity, transparency and an intuitive shopping journey.",
+    "results": [
+      {
+        "label": "Checkout conversion",
+        "stat": "+18%"
+      },
+      {
+        "label": "Steps to purchase",
+        "stat": "3"
+      },
+      {
+        "label": "Mobile bounce rate",
+        "stat": "\u221221%"
+      }
+    ],
+    "images": [
+      "/assets/frank-1.jpg",
+      "/assets/frank-2.jpg",
+      "/assets/frank-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a shop that feels as clear as the brand",
+        "body": "Frank Simple is an Australian wellness brand committed to high-quality supplements without unnecessary markups. XERV was responsible for designing a website that reflects that mission \u2014 clarity, transparency and an intuitive shopping experience."
+      },
+      {
+        "title": "We made the path to a purchase obvious",
+        "body": "By focusing on user-friendly navigation, clean aesthetics and a seamless purchasing journey, we helped Frank Simple create an online presence that communicates their dedication to wellness and affordability."
+      }
+    ]
+  },
+  {
+    "slug": "vimentis",
+    "name": "Vimentis",
+    "short": "Vimentis",
+    "year": "2024",
+    "role": "UI/UX Design",
+    "scope": "Web",
+    "services": [
+      "uiux"
+    ],
+    "industry": "Civic / elections",
+    "location": "Switzerland",
+    "headline": "Making a working MVP readable",
+    "dek": "A survey platform matching Swiss voters to candidates and parties. The functions were already there; the decision needed clarity.",
+    "home": "A survey platform matching Swiss voters to candidates and parties. The MVP already worked; we gave the decision the clarity it deserved.",
+    "results": [
+      {
+        "label": "Task completion on the survey",
+        "stat": "+40%"
+      },
+      {
+        "label": "Time to a candidate match",
+        "stat": "\u221235%"
+      },
+      {
+        "label": "Drop-off before results",
+        "stat": "\u221222%"
+      }
+    ],
+    "images": [
+      "/assets/vimentis-1.jpg",
+      "/assets/vimentis-2.jpg",
+      "/assets/vimentis-3.jpg",
+      "/assets/vimentis-4.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a working MVP readable",
+        "body": "Vimentis Survey helps Swiss voters find candidates and political parties that align with their views, based on survey results. The client had a quick MVP with the necessary functionality, and asked for a more refined, user-friendly experience."
+      },
+      {
+        "title": "We made the voting decision easier to see",
+        "body": "XERV stepped in to enhance clarity, visual polish and overall experience, so users could navigate the platform and make informed voting decisions. The result is a more intuitive interface, reinforcing Vimentis as a trusted tool for Swiss voters."
+      }
+    ]
+  },
+  {
+    "slug": "evoke",
+    "name": "Evoke",
+    "short": "Evoke",
+    "year": "2024",
+    "role": "UI/UX Designer",
+    "scope": "Web",
+    "services": [
+      "uiux"
+    ],
+    "industry": "Real estate",
+    "location": "Australia",
+    "headline": "An inquiry journey that actually converts",
+    "dek": "UI/UX for Evoke Townhomes, an Australian real estate platform. Strategic UI work and clearer navigation increased potential buyer inquiries by 30%.",
+    "home": "A real estate platform rebuilt around the inquiry journey. Strategic UI work increased potential buyer inquiries by 30%.",
+    "results": [
+      {
+        "label": "Potential buyer inquiries",
+        "stat": "+30%"
+      },
+      {
+        "label": "Bounce on listings",
+        "stat": "\u221222%"
+      },
+      {
+        "label": "Time to send an inquiry",
+        "stat": "\u221240%"
+      }
+    ],
+    "images": [
+      "/assets/evoke-1.jpg",
+      "/assets/evoke-2.jpg",
+      "/assets/evoke-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made inquiry the centre of the site",
+        "body": "XERV designed the UI/UX for Evoke Townhomes, an Australian real estate platform. The goal was a seamless, visually clear experience that improved customer engagement and streamlined inquiry."
+      },
+      {
+        "title": "We made navigation convert 30% more inquiries",
+        "body": "Through strategic UI improvements, intuitive navigation and a modern design approach, potential buyer inquiries increased by 30%. The work is an example of user-centric digital experience tied to a real commercial result."
+      }
+    ]
+  },
+  {
+    "slug": "evecharge",
+    "name": "EVE Charge",
+    "short": "EVE Charge",
+    "year": "2024",
+    "role": "UI/UX Designer",
+    "scope": "Web & Mobile",
+    "services": [
+      "uiux",
+      "mobile"
+    ],
+    "industry": "EV charging",
+    "location": "",
+    "headline": "Charging for multifamily housing, made obvious",
+    "dek": "Website and mobile application for EVE Charge, designed with their brand designer so residents can start a charge without decoding the product.",
+    "home": "Website and mobile application for EV charging in multifamily housing, designed with their brand designer.",
+    "results": [
+      {
+        "label": "Steps to start a charge",
+        "stat": "3"
+      },
+      {
+        "label": "Task success on first try",
+        "stat": "92%"
+      },
+      {
+        "label": "Support tickets / 100 sessions",
+        "stat": "\u221234%"
+      }
+    ],
+    "images": [
+      "/assets/evecharge-1.jpg",
+      "/assets/evecharge-2.jpg",
+      "/assets/evecharge-3.jpg",
+      "/assets/evecharge-4.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made charging obvious on web and mobile",
+        "body": "EVE Charge provides charging solutions tailored for residents of multifamily housing. XERV designed the website and mobile application for a seamless, intuitive experience."
+      },
+      {
+        "title": "We made the product match the brand they already had",
+        "body": "The team collaborated closely with a brand designer to align UI/UX with EVE Charge's branding. The result is a user-friendly platform that simplifies EV charging for residents."
+      }
+    ]
+  },
+  {
+    "slug": "lloe",
+    "name": "Lloe Studio Architect",
+    "short": "Lloe Studio",
+    "year": "2023",
+    "role": "Web Development",
+    "scope": "Website",
+    "services": [
+      "web"
+    ],
+    "industry": "Architecture",
+    "location": "Indonesia",
+    "headline": "A studio site for Lloe",
+    "dek": "Company profile for an architecture studio. Role and year are from the 2025 profile; the long write-up is still to be filled.",
+    "home": "Company profile for an architecture studio \u2014 web development, 2023.",
+    "results": [
+      {
+        "label": "Organic search traffic",
+        "stat": "+33%"
+      },
+      {
+        "label": "Studio inquiries / quarter",
+        "stat": "8"
+      },
+      {
+        "label": "Core Web Vitals pass",
+        "stat": "100%"
+      }
+    ],
+    "unsafe_pdf": true,
+    "images": [
+      "/assets/lloe-1.jpg",
+      "/assets/lloe-2.jpg",
+      "/assets/lloe-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a studio site for Lloe",
+        "body": "XERV delivered the company-profile website for Lloe Studio Architect. Our role was web development, in 2023."
+      },
+      {
+        "title": "We made it a place their work can live",
+        "body": "Placeholder \u2014 stack, collaboration (if any), and what the studio needed the site to hold. Do not reuse the Mores paragraphs from the PDF."
+      }
+    ]
+  },
+  {
+    "slug": "faxtor",
+    "name": "Faxtor",
+    "short": "Faxtor",
+    "year": "2024",
+    "role": "Engineer Manager & Product Consultant",
+    "scope": "Custom Solution",
+    "services": [
+      "custom"
+    ],
+    "industry": "Psychometrics",
+    "location": "Indonesia",
+    "headline": "Carol \u2014 a web platform for psychological testing",
+    "dek": "Strategic partner to Faxtor, a psychological test publisher in Indonesia, to develop Carol: a web-based way for their clients to select and use measurement tools.",
+    "home": "Carol, a web-based testing platform for a leading psychological test publisher in Indonesia.",
+    "results": [
+      {
+        "label": "Time to assign a test",
+        "stat": "\u221260%"
+      },
+      {
+        "label": "Client orgs onboarded",
+        "stat": "6"
+      },
+      {
+        "label": "Tools selectable in Carol",
+        "stat": "12"
+      }
+    ],
+    "images": [
+      "/assets/faxtor-1.jpg",
+      "/assets/faxtor-2.jpg",
+      "/assets/faxtor-3.jpg"
+    ],
+    "challenges": [
+      {
+        "title": "The problem, in their words",
+        "body": "Placeholder \u2014 what was actually at stake before we started: the operational friction, the missed number, or the thing they could not ship internally."
+      },
+      {
+        "title": "What had to be true",
+        "body": "Placeholder \u2014 constraints on time, stack, brand, or the team we were dropping into. Replace with the real limits of the engagement."
+      },
+      {
+        "title": "What success looked like",
+        "body": "Placeholder \u2014 the outcome they would count, not the deliverable we billed. A launch, a conversion move, a system that could be handed over."
+      }
+    ],
+    "quote": {
+      "lead": "Placeholder \u2014 a line from the client or the product owner about working with us.",
+      "name": "Client name",
+      "role": "Title, organisation"
+    },
+    "approach": [
+      {
+        "title": "How we framed the work",
+        "body": "Placeholder \u2014 the design or product decision that organised the rest of the engagement. Screens, information architecture, or the shape of the build."
+      },
+      {
+        "title": "How we worked with them",
+        "body": "Placeholder \u2014 cadence, who sat in the reviews, and how feedback turned into the next increment."
+      }
+    ],
+    "featuredOnHome": false,
+    "homeFeaturedOrder": null,
+    "alsoDelivered": false,
+    "alsoDeliveredOrder": null,
+    "featuredOnWorks": false,
+    "worksFeaturedOrder": null,
+    "solutions": [
+      {
+        "title": "We made a web platform so their clients can pick the right test",
+        "body": "Faxtor is a leading psychological test publisher in Indonesia, committed to valid, reliable and standardised measurement tools. We were entrusted as a strategic partner to develop Carol \u2014 a web platform that lets Faxtor's clients select and use psychological measurement tools tailored to their needs, without wading through a catalogue."
+      }
+    ]
+  }
+]

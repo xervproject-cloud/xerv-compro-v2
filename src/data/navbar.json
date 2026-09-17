@@ -1,0 +1,89 @@
+{
+  "primary": [
+    {
+      "id": "home",
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "id": "works",
+      "label": "Works",
+      "href": "/works"
+    },
+    {
+      "id": "about",
+      "label": "About Us",
+      "href": "/about"
+    },
+    {
+      "id": "start",
+      "label": "Start a project",
+      "href": "#contact",
+      "variant": "start"
+    }
+  ],
+  "homeSubnav": [
+    {
+      "id": "intro",
+      "index": "01",
+      "label": "Introduction",
+      "href": "#intro"
+    },
+    {
+      "id": "approach",
+      "index": "02",
+      "label": "Approach",
+      "href": "#approach"
+    },
+    {
+      "id": "services",
+      "index": "03",
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "id": "work",
+      "index": "04",
+      "label": "Selected work",
+      "href": "#work"
+    },
+    {
+      "id": "contact",
+      "index": "05",
+      "label": "Enquiries",
+      "href": "#contact"
+    }
+  ],
+  "workDetailSubnav": [
+    {
+      "id": "overview",
+      "index": "01",
+      "label": "Overview",
+      "href": "#overview"
+    },
+    {
+      "id": "challenges",
+      "index": "02",
+      "label": "Challenges",
+      "href": "#challenges"
+    },
+    {
+      "id": "quote",
+      "index": "03",
+      "label": "Testimonial",
+      "href": "#quote"
+    },
+    {
+      "id": "solution",
+      "index": "04",
+      "label": "Solutions",
+      "href": "#solution"
+    },
+    {
+      "id": "results",
+      "index": "05",
+      "label": "Results",
+      "href": "#results"
+    }
+  ]
+}

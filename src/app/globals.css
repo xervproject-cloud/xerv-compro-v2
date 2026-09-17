@@ -1,26 +1,44 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "../styles/xerv.css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand: #5b2ff4;
+  --color-brand-soft: #7a55ff;
+  --color-brand-hot: #a905d6;
+  --color-ink: #1a1238;
+  --color-green: #009760;
+  --color-gold: #f59e2a;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --breakpoint-compact: 767px;
+  --breakpoint-smooth: 991px;
+  --breakpoint-wide: 1024px;
+  --spacing-sidebar: 300px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Anti-FOUC: hide site chrome until boot script marks revealed or booting.
+   While booting, the #boot overlay (injected by boot-bridge.js) covers the page. */
+html:not(.is-revealed):not(.is-booting):not(.is-nav-enter) .shell,
+html:not(.is-revealed):not(.is-booting):not(.is-nav-enter) .start-btn {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Cover the viewport the instant is-booting is set, even before #boot mounts. */
+html.is-booting::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  background: linear-gradient(180deg, #1c0833 0%, #050505 100%);
+}
+
+html.is-booting .boot {
+  z-index: 100;
 }

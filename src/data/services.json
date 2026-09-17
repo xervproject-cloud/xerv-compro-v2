@@ -1,0 +1,51 @@
+[
+  {
+    "id": "mobile",
+    "name": "Mobile Application Development",
+    "short": "Mobile",
+    "copy": "Native and cross-platform products, from SDK work to full back-end, back-office and dual-platform releases.",
+    "accent": "#5B2FF4"
+  },
+  {
+    "id": "web",
+    "name": "Web Development",
+    "short": "Web",
+    "copy": "Company profiles, platforms and commerce, commonly built on Golang and Next.js for performance and scale.",
+    "accent": "#009760"
+  },
+  {
+    "id": "custom",
+    "name": "Custom Solution",
+    "short": "Custom",
+    "copy": "Systems shaped around a specific operational problem rather than a template \u2014 the work most vendors decline.",
+    "accent": "#F44926"
+  },
+  {
+    "id": "uiux",
+    "name": "UI/UX Design",
+    "short": "UI/UX",
+    "copy": "Intuitive, user-focused interfaces that move real business numbers, not just aesthetics.",
+    "accent": "#86ACAC"
+  },
+  {
+    "id": "qa",
+    "name": "Quality Assurance",
+    "short": "QA",
+    "copy": "Manual and automation testing for functionality, performance and reliability across releases.",
+    "accent": "#5B2FF4"
+  },
+  {
+    "id": "manpower",
+    "name": "Man Power As A Service",
+    "short": "Manpower",
+    "copy": "Embedded engineers, designers and QA who join your team and report into your rhythm.",
+    "accent": "#009760"
+  },
+  {
+    "id": "ai",
+    "name": "AI Solution",
+    "short": "AI",
+    "copy": "Applied models inside the products we already ship \u2014 search, intake, routing, and assistant surfaces on XERV's custom stack, not a chatbot bolted on after launch.",
+    "accent": "#A905D6"
+  }
+]

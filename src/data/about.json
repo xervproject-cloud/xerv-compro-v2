@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "title": "A lean studio, senior by default.",
+    "description": "XERV Project is a custom software agency established by five seasoned IT professionals in West Java, Indonesia."
+  },
+  "eyebrow": "About us \u2014 since 2023",
+  "headline": [
+    "A lean studio,",
+    "senior by default."
+  ],
+  "leads": [
+    "XERV is known as a custom software agency established by a team of five seasoned IT professionals who share a common passion for innovation and excellence. With years of experience in the tech industry, we have built a streamlined organisation that thrives on collaboration and adaptability.",
+    "As to our XERV manifesto, we stand ready to be your trustworthy partner and provide IT services in a clear, understandable and effective approach."
+  ],
+  "direction": {
+    "eyebrow": "Direction",
+    "title": "Where we are going, and what we owe you.",
+    "vision": "To be the go-to custom software agency that empowers developers, fosters innovation, and provides exceptional value to clients through scalable, impactful and efficient software solutions.",
+    "mission": "Create a flexible workspace for full-time and part-time collaborators. Provide opportunities for developers to enhance their skills and advance their careers. Develop customised solutions that solve complex challenges and drive client success.",
+    "values": [
+      {
+        "name": "Agility",
+        "copy": "We adapt quickly to changing needs and technologies."
+      },
+      {
+        "name": "Collaboration",
+        "copy": "We thrive on teamwork and open communication."
+      },
+      {
+        "name": "Excellence",
+        "copy": "We are committed to delivering outstanding results every time."
+      },
+      {
+        "name": "Empowerment",
+        "copy": "We support developers in achieving their full potential."
+      },
+      {
+        "name": "Client-centric",
+        "copy": "We prioritise understanding and solving our clients' specific needs."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "The team \u2014 12",
+    "title": "The people who will be in the room.",
+    "people": [
+      {
+        "name": "Herlangga Wicaksono",
+        "role": "Chief Executive Officer"
+      },
+      {
+        "name": "Perbawa Rizky Syarifuddin",
+        "role": "Chief Financial Officer"
+      },
+      {
+        "name": "Agus Setiawan",
+        "role": "Chief Operating Officer"
+      },
+      {
+        "name": "Fachry",
+        "role": "UI/UX Designer"
+      },
+      {
+        "name": "Agus Kristanto",
+        "role": "UI/UX Designer"
+      },
+      {
+        "name": "Joseph Senjaya",
+        "role": "Mobile Application Engineer"
+      },
+      {
+        "name": "Jonathan Chang",
+        "role": "Front End / Back End Engineer"
+      },
+      {
+        "name": "Gabriella Franchesca",
+        "role": "Front End / Back End Engineer"
+      },
+      {
+        "name": "Rizky Fauzi",
+        "role": "Front End / Back End Engineer"
+      },
+      {
+        "name": "Sisilia Halim",
+        "role": "QA Manual / Automation"
+      },
+      {
+        "name": "Desphi Satria Nurjaya",
+        "role": "QA Manual / Automation"
+      },
+      {
+        "name": "Cahya Setiawan",
+        "role": "QA Manual / Automation"
+      }
+    ]
+  },
+  "contact": {
+    "telephone": "+62 878 2108 4158",
+    "studio": "Cilame Indah B 106, West Java, Indonesia",
+    "email": "xerv.project@gmail.com",
+    "note": "We take on a small number of engagements each year and reply to everything, usually within two days."
+  }
+}
