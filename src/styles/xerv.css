@@ -526,7 +526,18 @@ html.is-revealed .boot {
   filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.55));
 }
 
+html.is-booting .boot-x:not(.is-live) {
+  animation: boot-x-spin 1.44s cubic-bezier(0.65, 0, 0.35, 1) 2 both;
+}
+
+@keyframes boot-x-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 .boot-x.is-live {
+  animation: none;
   left: 0;
   top: 0;
   transform: none;

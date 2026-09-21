@@ -13,6 +13,15 @@
     if (isHome && !seen && !fromNav) {
       html.classList.add("is-booting");
 
+      if (!document.getElementById("boot-spin-style")) {
+        var spinStyle = document.createElement("style");
+        spinStyle.id = "boot-spin-style";
+        spinStyle.textContent =
+          "@keyframes boot-x-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}" +
+          "html.is-booting .boot-x:not(.is-live){animation:boot-x-spin 1.44s cubic-bezier(0.65,0,0.35,1) 2 both}";
+        (document.head || html).appendChild(spinStyle);
+      }
+
       if (!document.getElementById("boot")) {
         var boot = document.createElement("div");
         boot.id = "boot";

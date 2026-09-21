@@ -1460,6 +1460,16 @@ for (const row of restRows) {
   const fromNav = sessionStorage.getItem('xerv-nav') === '1';
   if (fromNav) sessionStorage.removeItem('xerv-nav');
 
+  /* Client-side routing keeps the same document, so is-nav-exit from the
+     leave animation would stick forever — boot-bridge.js only runs on a
+     full load. Convert exit → enter here when effects rebind to the new page. */
+  if (fromNav || html.classList.contains('is-nav-exit')) {
+    html.classList.remove('is-nav-exit', 'is-pip-fly', 'is-nav-in');
+    document.querySelector('.nav-pip')?.classList.remove('is-on');
+    html.classList.add('is-nav-enter');
+    window.scrollTo(0, 0);
+  }
+
   const OPEN_MT = '0.4rem';
   const OPEN_MB = '1.1rem';
   const EASE_IN = 'cubic-bezier(0.4, 0, 0.2, 1)';

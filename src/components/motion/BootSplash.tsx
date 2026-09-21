@@ -2,7 +2,11 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { isBootComplete, runBootIntro } from "@/components/motion/boot-intro";
+import {
+  isBootComplete,
+  releaseBootIfNotStarted,
+  runBootIntro,
+} from "@/components/motion/boot-intro";
 
 function shouldOfferBoot(pathname: string) {
   if (pathname !== "/") return false;
@@ -75,17 +79,21 @@ export function BootSplash() {
     ensureBootMarkup();
     document.documentElement.classList.add("is-booting");
 
-    let tries = 0;
     let raf = 0;
     let cancelled = false;
+    const deadline = Date.now() + 8000;
 
     const attempt = () => {
       if (cancelled) return;
       const result = runBootIntro();
-      if (result === "retry" && tries < 90) {
-        tries += 1;
+      if (result !== "retry") return;
+      if (Date.now() < deadline) {
         raf = requestAnimationFrame(attempt);
+        return;
       }
+      document.documentElement.classList.add("is-revealed");
+      document.documentElement.classList.remove("is-booting");
+      document.getElementById("boot")?.remove();
     };
 
     raf = requestAnimationFrame(() => requestAnimationFrame(attempt));
@@ -93,6 +101,7 @@ export function BootSplash() {
     return () => {
       cancelled = true;
       cancelAnimationFrame(raf);
+      releaseBootIfNotStarted();
     };
   }, [pathname]);
 

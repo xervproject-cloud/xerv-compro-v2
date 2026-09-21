@@ -6,9 +6,39 @@
 
 let bootHandled = false;
 let bootCompleted = false;
+let playStarted = false;
+let pendingPlayRaf = 0;
 
 export function isBootComplete() {
   return bootCompleted;
+}
+
+export function releaseBootIfNotStarted() {
+  if (playStarted || bootCompleted) return;
+  if (pendingPlayRaf) {
+    cancelAnimationFrame(pendingPlayRaf);
+    pendingPlayRaf = 0;
+  }
+  bootHandled = false;
+}
+
+function waitForMark(timeoutMs) {
+  return new Promise((resolve) => {
+    const started = Date.now();
+    const tick = () => {
+      const found = document.querySelector(".logo .mark-x");
+      if (found) {
+        resolve(found);
+        return;
+      }
+      if (Date.now() - started >= timeoutMs) {
+        resolve(null);
+        return;
+      }
+      window.setTimeout(tick, 50);
+    };
+    tick();
+  });
 }
 
 export function runBootIntro() {
@@ -21,13 +51,10 @@ export function runBootIntro() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const boot = document.getElementById("boot");
   const bootX = document.querySelector(".boot-x");
-  const destX = document.querySelector(".logo .mark-x");
-  const wash = document.querySelector(".boot-wash");
-  const glow = document.querySelector(".boot-glow");
-  const bootBg = document.querySelector(".boot-bg");
 
-  // Logo / boot markup not ready yet — ask caller to retry.
-  if (!boot || !bootX || !destX) {
+  // The page logo can stream in after layout hydration. Do not block the
+  // spin on it — only the later dock needs `.logo .mark-x`.
+  if (!boot || !bootX) {
     return "retry";
   }
 
@@ -98,13 +125,20 @@ export function runBootIntro() {
   function run(duration, ease, render) {
     return new Promise((resolve) => {
       const t0 = performance.now();
-      function frame(now) {
+      let settled = false;
+      const frame = (now) => {
+        if (settled) return;
         const u = Math.min(1, (now - t0) / duration);
         render(ease(u), u);
-        if (u < 1) requestAnimationFrame(frame);
-        else resolve();
-      }
+        if (u < 1) {
+          requestAnimationFrame(frame);
+          return;
+        }
+        settled = true;
+        resolve();
+      };
       requestAnimationFrame(frame);
+      window.setTimeout(() => frame(t0 + duration), duration + 32);
     });
   }
 
@@ -191,24 +225,26 @@ export function runBootIntro() {
   }
 
   async function play() {
+    if (playStarted || bootCompleted) return;
+    playStarted = true;
+    pendingPlayRaf = 0;
+
     const size = markSize();
     const cx = () => (window.innerWidth - size) / 2;
     const cy = () => (window.innerHeight - size) / 2;
+    const markPromise = waitForMark(8000);
 
-    putMark(cx(), cy(), size, 0);
     paintGlow(0);
 
     await run(beat(2000), easeInOutCubic, (e) => {
-      putMark(cx(), cy(), size, e * 360);
       paintGlow(e * 0.36);
     });
 
     await run(beat(1600), easeInOutCubic, (e) => {
-      putMark(cx(), cy(), size, 360 + e * 360);
       paintGlow(0.36 + e * 0.16);
     });
 
-    const mark = document.querySelector(".logo .mark-x");
+    const mark = await markPromise;
     if (!mark) {
       finish();
       return;
@@ -217,6 +253,7 @@ export function runBootIntro() {
     const fromX = cx();
     const fromY = cy();
 
+    putMark(fromX, fromY, size, 720);
     html.classList.add("is-docking");
 
     await run(beat(1600), easeInOutCubic, (e) => {
@@ -245,6 +282,13 @@ export function runBootIntro() {
     finish();
   }
 
-  requestAnimationFrame(() => requestAnimationFrame(play));
+  const startPlay = () => {
+    if (playStarted || bootCompleted) return;
+    void play();
+  };
+  pendingPlayRaf = requestAnimationFrame(() => {
+    pendingPlayRaf = requestAnimationFrame(startPlay);
+  });
+  window.setTimeout(startPlay, 0);
   return "done";
 }
