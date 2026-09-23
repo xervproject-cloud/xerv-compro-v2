@@ -11,7 +11,7 @@ import {
 function shouldOfferBoot(pathname: string) {
   if (pathname !== "/") return false;
   try {
-    if (sessionStorage.getItem("xerv-here") === "1") return false;
+    // Soft nav within the app — skip the full splash, keep the page enter.
     if (sessionStorage.getItem("xerv-nav") === "1") return false;
   } catch {
     return false;

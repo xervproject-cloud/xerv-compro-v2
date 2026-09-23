@@ -19,10 +19,12 @@ export function CrystalX() {
         if (cancelled) break;
         if (host.querySelector("canvas")) continue;
         try {
-          await mountCrystal(host);
-          cleanups.push(() => {
-            host.querySelectorAll("canvas").forEach((el) => el.remove());
-          });
+          const dispose = await mountCrystal(host);
+          if (cancelled) {
+            dispose?.();
+            break;
+          }
+          if (typeof dispose === "function") cleanups.push(dispose);
         } catch (err) {
           console.error("crystal-x", err);
         }

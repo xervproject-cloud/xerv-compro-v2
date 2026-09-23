@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowIcon } from "@/components/shell/ArrowIcon";
 import { Logo } from "@/components/shell/Logo";
@@ -13,10 +14,63 @@ type SidebarProps = {
 
 export function Sidebar({ navbar, workName }: SidebarProps) {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuPathname, setMenuPathname] = useState(pathname);
   const isHome = pathname === "/";
   const isWorksIndex = pathname === "/works";
   const isWorkDetail = pathname.startsWith("/works/") && pathname !== "/works";
   const isAbout = pathname === "/about";
+
+  if (pathname !== menuPathname) {
+    setMenuPathname(pathname);
+    setMenuOpen(false);
+  }
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const onChange = () => {
+      if (!mq.matches) setMenuOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const nav = document.getElementById("site-nav");
+    const main = document.querySelector<HTMLElement>("main.main");
+
+    html.classList.toggle("is-menu", menuOpen);
+
+    if (nav) {
+      if (menuOpen) nav.setAttribute("data-lenis-prevent", "");
+      else nav.removeAttribute("data-lenis-prevent");
+    }
+
+    if (main) main.inert = menuOpen;
+
+    window.dispatchEvent(
+      new CustomEvent("xerv:menu", { detail: { open: menuOpen } }),
+    );
+
+    return () => {
+      html.classList.remove("is-menu");
+      nav?.removeAttribute("data-lenis-prevent");
+      if (main) main.inert = false;
+      window.dispatchEvent(new CustomEvent("xerv:menu", { detail: { open: false } }));
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
   return (
     <aside className="sidebar">
@@ -31,8 +85,9 @@ export function Sidebar({ navbar, workName }: SidebarProps) {
           className="menu-toggle"
           type="button"
           aria-controls="site-nav"
-          aria-expanded="false"
-          aria-label="Open menu"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((open) => !open)}
         >
           <span className="menu-toggle-mark" aria-hidden="true">
             <span />
@@ -41,7 +96,19 @@ export function Sidebar({ navbar, workName }: SidebarProps) {
         </button>
       </div>
 
-      <nav className="nav" id="site-nav" aria-label="Primary">
+      <nav
+        className="nav"
+        id="site-nav"
+        aria-label="Primary"
+        onClick={(event) => {
+          if (
+            window.matchMedia("(max-width: 767px)").matches &&
+            (event.target as Element).closest("a[href]")
+          ) {
+            setMenuOpen(false);
+          }
+        }}
+      >
         <ul className="nav-list">
           {navbar.primary.map((item) => {
             if (item.variant === "start") {

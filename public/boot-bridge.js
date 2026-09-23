@@ -3,14 +3,13 @@
     var html = document.documentElement;
     var path = location.pathname || "/";
     var isHome = path === "/" || path === "";
-    var seen = sessionStorage.getItem("xerv-here") === "1";
     var fromNav = sessionStorage.getItem("xerv-nav") === "1";
 
     if (fromNav) {
       html.classList.add("is-nav-enter");
     }
 
-    if (isHome && !seen && !fromNav) {
+    if (isHome && !fromNav) {
       html.classList.add("is-booting");
 
       if (!document.getElementById("boot-spin-style")) {

@@ -60,12 +60,10 @@ export function runBootIntro() {
 
   bootHandled = true;
 
-  const seenHere = sessionStorage.getItem("xerv-here") === "1";
   const fromNav = sessionStorage.getItem("xerv-nav") === "1";
 
   const skip =
     reduceMotion.matches ||
-    seenHere ||
     fromNav ||
     (window.location.hash &&
       !/^#intro$/.test(window.location.hash) &&
@@ -81,11 +79,6 @@ export function runBootIntro() {
 
   function finish() {
     bootCompleted = true;
-    try {
-      sessionStorage.setItem("xerv-here", "1");
-    } catch {
-      /* ignore */
-    }
     html.classList.remove("is-booting");
     html.classList.add("is-revealed");
     document.dispatchEvent(new Event("xerv:booted"));
@@ -97,11 +90,6 @@ export function runBootIntro() {
 
   if (skip) {
     bootCompleted = true;
-    try {
-      sessionStorage.setItem("xerv-here", "1");
-    } catch {
-      /* ignore */
-    }
     html.classList.remove("is-booting");
     html.classList.add("is-revealed");
     removeBoot();
@@ -230,8 +218,6 @@ export function runBootIntro() {
     pendingPlayRaf = 0;
 
     const size = markSize();
-    const cx = () => (window.innerWidth - size) / 2;
-    const cy = () => (window.innerHeight - size) / 2;
     const markPromise = waitForMark(8000);
 
     paintGlow(0);
@@ -249,18 +235,22 @@ export function runBootIntro() {
       finish();
       return;
     }
-    const to = mark.getBoundingClientRect();
-    const fromX = cx();
-    const fromY = cy();
 
-    putMark(fromX, fromY, size, 720);
+    // Match the CSS-centered spin size/position so is-live does not snap.
+    const spinBox = bootX.getBoundingClientRect();
+    const fromSize = spinBox.width || size;
+    const fromX = spinBox.left;
+    const fromY = spinBox.top;
+    const to = mark.getBoundingClientRect();
+
+    putMark(fromX, fromY, fromSize, 720);
     html.classList.add("is-docking");
 
     await run(beat(1600), easeInOutCubic, (e) => {
       putMark(
         lerp(fromX, to.left, e),
         lerp(fromY, to.top, e),
-        lerp(size, to.width, e),
+        lerp(fromSize, to.width, e),
         720 + e * 360
       );
       paintGlow(0.52 + e * 0.48);

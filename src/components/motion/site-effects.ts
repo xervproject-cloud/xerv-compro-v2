@@ -1367,65 +1367,22 @@ for (const row of restRows) {
 });
 
 /* ============================================================
-   6 · MOBILE MENU
-   Below 768px the sidebar collapses behind a burger and Start a
-   project joins the same list. Wider viewports never take this
-   path — the floating pill and open sidebar stay as they are.
+   6 · MOBILE MENU (side effects)
+   Open/close lives in Sidebar.tsx. Here we only pause Lenis while
+   the drawer is open, and keep the top scrim in sync on scroll.
    ============================================================ */
 (function mobileMenu() {
   const html = document.documentElement;
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('#site-nav') || document.querySelector('.nav');
-  const main = document.querySelector('.main');
-  if (!toggle || !nav) return;
-
   const mq = window.matchMedia('(max-width: 767px)');
 
-  function isOpen() {
-    return html.classList.contains('is-menu');
-  }
-
-  function close(restore) {
-    if (!isOpen()) {
-      if (main) main.inert = false;
-      return;
-    }
-    html.classList.remove('is-menu');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
-    nav.removeAttribute('data-lenis-prevent');
-    if (main) main.inert = false;
-    if (typeof lenis !== 'undefined' && lenis) lenis.start();
-    if (restore) toggle.focus({ preventScroll: true });
-  }
-
-  function open() {
-    if (!mq.matches || isOpen()) return;
-    html.classList.add('is-menu');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close menu');
-    nav.setAttribute('data-lenis-prevent', '');
-    if (main) main.inert = true;
-    if (typeof lenis !== 'undefined' && lenis) lenis.stop();
-  }
-
-  toggle.addEventListener('click', () => {
-    if (isOpen()) close(false);
-    else open();
+  on(window, 'xerv:menu', (event) => {
+    if (!lenis) return;
+    if (event.detail?.open) lenis.stop();
+    else lenis.start();
   });
 
-  nav.addEventListener('click', (event) => {
-    if (!mq.matches || !event.target.closest('a[href]')) return;
-    close(false);
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') close(true);
-  });
-
-  mq.addEventListener('change', (event) => {
+  on(mq, 'change', (event) => {
     if (!event.matches) {
-      close(false);
       html.classList.remove('is-nav-scrim', 'is-nav-scrim-dark');
     }
   });
@@ -1447,7 +1404,7 @@ for (const row of restRows) {
   }
 
   syncScrim();
-  window.addEventListener('scroll', syncScrim, { passive: true });
+  on(window, 'scroll', syncScrim, { passive: true });
 })();
 
 /* ============================================================

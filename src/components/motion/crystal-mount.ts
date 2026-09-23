@@ -7,9 +7,11 @@
  * That pass is offscreen against black. The visible canvas clears
  * to alpha 0 with no scene.background; only the lit crystal is
  * composited. mix-blend lighten in CSS drops leftover dark pixels.
+ *
+ * Scroll cost: the hero host is CSS-huge (135vw+) and stays intersecting
+ * through a tall clip. Cap the draw buffer, freeze the RAF while the
+ * page is scrolling, and run the idle float at ~30fps.
  */
-const HOST_SEL = '.crystal-x';
-
 const CONFIG = {
   targetSize: 4.0,
   depthRatio: 0.07,
@@ -31,6 +33,11 @@ const CONFIG = {
   tiltSpeed: 0.42,
   floatAmount: 0.05,
   floatSpeed: 0.62,
+  maxBufferHero: 1680,
+  maxBuffer: 1024,
+  maxBufferCompact: 720,
+  frameMs: 1000 / 30,
+  scrollIdleMs: 120,
 };
 
 const MARK =
@@ -49,7 +56,12 @@ function pixelCap(isHero) {
   if (reduce.matches || saveDataOn() || coarse.matches || compact.matches) {
     return Math.min(dpr, 1);
   }
-  return Math.min(dpr, isHero ? 1.1 : 1.25);
+  return Math.min(dpr, isHero ? 1.25 : 1.5);
+}
+
+function maxBufferEdge(isHero) {
+  if (compact.matches || coarse.matches || saveDataOn()) return CONFIG.maxBufferCompact;
+  return isHero ? CONFIG.maxBufferHero : CONFIG.maxBuffer;
 }
 
 function toneFactory(THREE, backdrop) {
@@ -144,7 +156,7 @@ export async function mountCrystal(host) {
     type: THREE.UnsignedByteType,
     minFilter: THREE.LinearFilter,
     magFilter: THREE.LinearFilter,
-    samples: Math.min(4, renderer.capabilities.maxSamples || 0),
+    samples: Math.min(2, renderer.capabilities.maxSamples || 0),
   });
   const blitCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   const blitMaterial = new THREE.ShaderMaterial({
@@ -324,9 +336,12 @@ export async function mountCrystal(host) {
   let sizedPr = 0;
 
   function sizeToHost() {
-    const width = Math.max(1, host.clientWidth);
-    const height = Math.max(1, host.clientHeight);
+    const cssW = Math.max(1, host.clientWidth);
+    const cssH = Math.max(1, host.clientHeight);
     const pr = renderer.getPixelRatio();
+    const scale = Math.min(1, maxBufferEdge(isHero) / Math.max(cssW, cssH));
+    const width = Math.max(1, Math.round(cssW * scale));
+    const height = Math.max(1, Math.round(cssH * scale));
     if (width === sizedW && height === sizedH && pr === sizedPr) return false;
     sizedW = width;
     sizedH = height;
@@ -346,9 +361,12 @@ export async function mountCrystal(host) {
   const bob = CONFIG.floatAmount * (compact.matches ? 0.7 : 1);
   let raf = 0;
   let onScreen = false;
+  let scrolling = false;
+  let scrollTimer = 0;
+  let lastFrameAt = 0;
 
   function shouldRun() {
-    return onScreen && !document.hidden && !reduce.matches;
+    return onScreen && !scrolling && !document.hidden && !reduce.matches;
   }
 
   function markRaf(on) {
@@ -369,7 +387,7 @@ export async function mountCrystal(host) {
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
   }
 
-  function tick() {
+  function tick(now) {
     if (!shouldRun()) {
       raf = 0;
       markRaf(false);
@@ -377,6 +395,8 @@ export async function mountCrystal(host) {
     }
     raf = requestAnimationFrame(tick);
     markRaf(true);
+    if (now - lastFrameAt < CONFIG.frameMs) return;
+    lastFrameAt = now;
     const elapsed = clock.getElapsedTime();
     const s = CONFIG.tiltSpeed;
     crystal.position.y = Math.sin(elapsed * CONFIG.floatSpeed) * bob;
@@ -392,6 +412,7 @@ export async function mountCrystal(host) {
       return;
     }
     if (!shouldRun() || raf) return;
+    lastFrameAt = 0;
     raf = requestAnimationFrame(tick);
     markRaf(true);
   }
@@ -408,6 +429,19 @@ export async function mountCrystal(host) {
     else pause();
   }
 
+  function onScrollActivity() {
+    if (!onScreen || reduce.matches) return;
+    if (!scrolling) {
+      scrolling = true;
+      pause();
+    }
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      scrolling = false;
+      syncLoop();
+    }, CONFIG.scrollIdleMs);
+  }
+
   const ro = new ResizeObserver(() => {
     const changed = sizeToHost();
     if (changed && (reduce.matches || !shouldRun())) paint();
@@ -416,16 +450,42 @@ export async function mountCrystal(host) {
 
   const vis = new IntersectionObserver(
     (entries) => {
-      onScreen = entries.some((entry) => entry.isIntersecting);
+      onScreen = entries.some((entry) => {
+        if (!entry.isIntersecting) return false;
+        const { width, height } = entry.intersectionRect;
+        return width * height >= 160 * 160;
+      });
       syncLoop();
     },
-    { rootMargin: '80px' }
+    { rootMargin: '0px', threshold: [0, 0.01, 0.05, 0.1, 0.2] }
   );
   vis.observe(host);
 
   document.addEventListener('visibilitychange', syncLoop);
+  window.addEventListener('scroll', onScrollActivity, { passive: true });
+  window.addEventListener('wheel', onScrollActivity, { passive: true });
+  window.addEventListener('touchmove', onScrollActivity, { passive: true });
 
   paint();
   markRaf(false);
+
+  return () => {
+    pause();
+    window.clearTimeout(scrollTimer);
+    ro.disconnect();
+    vis.disconnect();
+    document.removeEventListener('visibilitychange', syncLoop);
+    window.removeEventListener('scroll', onScrollActivity);
+    window.removeEventListener('wheel', onScrollActivity);
+    window.removeEventListener('touchmove', onScrollActivity);
+    glass.dispose();
+    geometries.forEach((geometry) => geometry.dispose());
+    glassTarget.dispose();
+    blitMaterial.dispose();
+    if (scene.environment) scene.environment.dispose();
+    renderer.dispose();
+    renderer.domElement.remove();
+    delete host.dataset.crystalRaf;
+  };
 }
 
