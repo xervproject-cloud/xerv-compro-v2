@@ -8,7 +8,7 @@ import { WorkQuote } from "@/components/works/WorkQuote";
 import { WorkRelated } from "@/components/works/WorkRelated";
 import { WorkResults } from "@/components/works/WorkResults";
 import { WorkSolutions } from "@/components/works/WorkSolutions";
-import { getRelatedWorks, getWork, getWorkSlugs } from "@/lib/data";
+import { getAdjacentWorks, getWork, getWorkSlugs } from "@/lib/data";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -33,7 +33,7 @@ export default async function WorkDetailPage({ params }: PageProps) {
   const work = getWork(slug);
   if (!work) notFound();
 
-  const related = getRelatedWorks(slug, 4);
+  const related = getAdjacentWorks(slug);
 
   return (
     <SiteShell workName={work.short}>
