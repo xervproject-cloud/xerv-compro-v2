@@ -260,10 +260,6 @@ function measureZones() {
   });
 }
 
-/* Nine samples rather than a handful: a fast turn in the ramp reads
-   as a kink if the gradient is described too coarsely. */
-const SAMPLES = 9;
-
 const contactEl = document.getElementById('contact');
 
 function paintContactWash() {
@@ -290,15 +286,19 @@ function paintTone() {
   const top = window.scrollY;
   const vh = window.innerHeight;
 
-  const parts = [];
-  let centre = null;
-
-  for (let i = 0; i < SAMPLES; i += 1) {
-    const k = i / (SAMPLES - 1);
-    const rgb = toneAt(top + vh * k);
-    parts.push(`${css(rgb)} ${(k * 100).toFixed(2)}%`);
-    if (i === (SAMPLES - 1) / 2) centre = rgb;
+  /* The ramp is piecewise linear, so the window's edges plus every
+     stop between them describe it exactly. Sampling at fixed fractions
+     of the window instead aliases any turn narrower than the sample
+     spacing: a waypoint's peak brightens and dims as it slides between
+     samples, and reads as a flicker while scrolling. */
+  const bottom = top + vh;
+  const parts = [`${css(toneAt(top))} 0%`];
+  for (const stop of stops) {
+    if (stop.y <= top || stop.y >= bottom) continue;
+    parts.push(`${css(toneAt(stop.y))} ${(((stop.y - top) / vh) * 100).toFixed(2)}%`);
   }
+  parts.push(`${css(toneAt(bottom))} 100%`);
+  const centre = toneAt(top + vh * 0.5);
 
   /* Published as a variable so anything that must be opaque can paint
      the identical ramp instead of approximating it with one flat
