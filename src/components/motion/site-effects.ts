@@ -673,7 +673,7 @@ if (lenis) {
   /* Anchors have to be intercepted rather than left to the browser:
      smooth scrolling is off at the CSS level while Lenis is running,
      so an untouched hash link would hard-cut to its target. */
-  document.addEventListener('click', (event) => {
+  on(document, 'click', (event) => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey) return;
 
     const link = event.target.closest('a[href^="#"]');
@@ -714,7 +714,7 @@ function remeasure() {
   measureSpy();
 }
 
-compactTone.addEventListener('change', remeasure);
+on(compactTone, 'change', remeasure);
 
 let rafId = 0;
 let dead = false;
@@ -751,7 +751,7 @@ function tick(time) {
   rafId = requestAnimationFrame(tick);
 }
 
-window.addEventListener('resize', () => {
+on(window, 'resize', () => {
   remeasure();
   lastY = -1;
 });
@@ -764,7 +764,7 @@ requestAnimationFrame(tick);
 
 if (lenis && document.documentElement.classList.contains('is-booting')) {
   lenis.stop();
-  document.addEventListener(
+  on(document, 
     'xerv:booted',
     () => {
       lenis.start();
@@ -775,7 +775,7 @@ if (lenis && document.documentElement.classList.contains('is-booting')) {
 }
 
 /* Section heights settle once webfonts and images land. */
-window.addEventListener('load', () => {
+on(window, 'load', () => {
   remeasure();
   lastY = -1;
 });
@@ -891,7 +891,7 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
   };
 
   if (document.documentElement.classList.contains('is-booting')) {
-    document.addEventListener('xerv:arriving', watch, { once: true });
+    on(document, 'xerv:arriving', watch, { once: true });
   } else {
     watch();
   }
@@ -1118,6 +1118,14 @@ function openProject(href, still, event, srcOverride) {
     return;
   }
 
+  /* Client-side routing keeps the same document, so boot-bridge.js never
+     runs and the leave state from coverThenGo would stick. Hand the held
+     layer over to the arrival here instead. */
+  if (document.documentElement.classList.contains('is-leaving')) {
+    document.documentElement.classList.remove('is-leaving');
+    document.documentElement.classList.add('is-bridging');
+  }
+
   if (!document.documentElement.classList.contains('is-bridging')) return;
 
   let payload = {};
@@ -1182,7 +1190,7 @@ function openProject(href, still, event, srcOverride) {
     requestAnimationFrame(() => {
       morphLayer(layer, from, dest, ms);
       window.setTimeout(() => html.classList.add('is-landed'), chromeAt);
-      layer.addEventListener(
+      on(layer, 
         'transitionend',
         (event) => {
           if (event.propertyName === 'transform' || event.propertyName === 'border-radius') finish();
@@ -1202,7 +1210,7 @@ function openProject(href, still, event, srcOverride) {
   };
 
   if (heroImg && !heroImg.complete) {
-    heroImg.addEventListener('load', play, { once: true });
+    on(heroImg, 'load', play, { once: true });
     window.setTimeout(play, 400);
   } else {
     play();
@@ -1224,7 +1232,7 @@ if (finePointer.matches && !reduceMotion.matches && restRows.length) {
   reel.className = 'reel';
   reel.setAttribute('aria-hidden', 'true');
   reel.innerHTML =
-    '<span class="reel-label">View case study</span>' + '<div class="reel-frame"></div>';
+    '<span class="reel-label">See the project</span>' + '<div class="reel-frame"></div>';
   document.body.appendChild(reel);
 
   const frame = reel.querySelector('.reel-frame');
@@ -1270,7 +1278,7 @@ if (finePointer.matches && !reduceMotion.matches && restRows.length) {
 
     frame.replaceChildren(...list);
     list.forEach((img, i) => img.classList.toggle('is-active', i === 0));
-    if (label) label.textContent = source.dataset.reelLabel || 'View case study';
+    if (label) label.textContent = source.dataset.reelLabel || 'See the project';
 
     let i = 0;
     window.clearInterval(ticker);
@@ -1284,7 +1292,7 @@ if (finePointer.matches && !reduceMotion.matches && restRows.length) {
   }
 
   function bindReel(target, resolve) {
-    target.addEventListener('pointerenter', (event) => {
+    on(target, 'pointerenter', (event) => {
       if (event.pointerType !== 'mouse') return;
 
       held = target;
@@ -1294,12 +1302,12 @@ if (finePointer.matches && !reduceMotion.matches && restRows.length) {
       targetShown = 1;
     });
 
-    target.addEventListener('pointermove', (event) => {
+    on(target, 'pointermove', (event) => {
       toX = event.clientX;
       toY = event.clientY;
     });
 
-    target.addEventListener('pointerleave', () => {
+    on(target, 'pointerleave', () => {
       if (held !== target) return;
       held = null;
       targetShown = 0;
@@ -1336,11 +1344,11 @@ if (finePointer.matches && !reduceMotion.matches && restRows.length) {
 }
 
 for (const btn of document.querySelectorAll('.slide-go')) {
-  btn.addEventListener('pointerenter', () => {
+  on(btn, 'pointerenter', () => {
     const slide = btn.closest('.slide');
     warm(slide?.dataset.href || btn.getAttribute('href'));
   });
-  btn.addEventListener('click', (event) => {
+  on(btn, 'click', (event) => {
     const slide = btn.closest('.slide');
     const href = slide?.dataset.href || btn.getAttribute('href');
     const idx = slides.indexOf(slide);
@@ -1351,8 +1359,8 @@ for (const btn of document.querySelectorAll('.slide-go')) {
 }
 
 for (const row of restRows) {
-  row.addEventListener('pointerenter', () => warm(row.href));
-  row.addEventListener('click', (event) => {
+  on(row, 'pointerenter', () => warm(row.href));
+  on(row, 'click', (event) => {
     if (row.classList.contains('is-more')) return;
     const picked = stillFromRow(row);
     openProject(row.href, picked.el, event, picked.src);
@@ -1360,8 +1368,8 @@ for (const row of restRows) {
 }
 
   document.querySelectorAll('.cs-more-card').forEach((card) => {
-  card.addEventListener('pointerenter', () => warm(card.href));
-  card.addEventListener('click', (event) => {
+  on(card, 'pointerenter', () => warm(card.href));
+  on(card, 'click', (event) => {
     openProject(card.href, card.querySelector('.cs-more-shot') || card, event);
   });
 });
@@ -1668,7 +1676,7 @@ for (const row of restRows) {
     });
   }
 
-  nav.addEventListener('click', (event) => {
+  on(nav, 'click', (event) => {
     const link = event.target.closest('a[href]');
     if (!link || !nav.contains(link)) return;
     if (link.classList.contains('subnav-link')) return;
@@ -1684,7 +1692,7 @@ for (const row of restRows) {
 
   const logo = document.querySelector('.logo[href]');
   if (logo) {
-    logo.addEventListener('click', (event) => {
+    on(logo, 'click', (event) => {
       if (isModified(event) || leaving) return;
       const dest = new URL(logo.href, location.href);
       if (dest.origin !== location.origin) return;
@@ -1726,11 +1734,11 @@ for (const row of restRows) {
     if (!raf) raf = requestAnimationFrame(paint);
   }
 
-  card.addEventListener('pointerenter', () => {
+  on(card, 'pointerenter', () => {
     card.classList.add('is-lit');
   });
 
-  card.addEventListener('pointermove', (event) => {
+  on(card, 'pointermove', (event) => {
     const box = card.getBoundingClientRect();
     const w = box.width || 1;
     const h = box.height || 1;
@@ -1739,7 +1747,7 @@ for (const row of restRows) {
     kick();
   });
 
-  card.addEventListener('pointerleave', () => {
+  on(card, 'pointerleave', () => {
     card.classList.remove('is-lit');
     tx = 0.5;
     ty = 0.4;
@@ -1773,7 +1781,7 @@ for (const row of restRows) {
 
   const group = root.querySelector('.work-filter');
   if (group) {
-    group.addEventListener('click', (event) => {
+    on(group, 'click', (event) => {
       const btn = event.target.closest('.work-filter-btn');
       if (!btn) return;
       apply(btn.dataset.filter);
