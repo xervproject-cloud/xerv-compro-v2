@@ -41,7 +41,7 @@
     ]
   },
   "team": {
-    "eyebrow": "The team \u2014 12",
+    "eyebrow": "The team \u2014 13",
     "title": "The people who will be in the room.",
     "people": [
       {
@@ -49,12 +49,12 @@
         "role": "Chief Executive Officer"
       },
       {
-        "name": "Perbawa Rizky Syarifuddin",
-        "role": "Chief Financial Officer"
+        "name": "Mirza Aditya Deliantama",
+        "role": "Chief Technology Officer"
       },
       {
-        "name": "Agus Setiawan",
-        "role": "Chief Operating Officer"
+        "name": "Perbawa Rizky Syarifuddin",
+        "role": "Chief Financial Officer"
       },
       {
         "name": "Fachry",
@@ -67,6 +67,10 @@
       {
         "name": "Joseph Senjaya",
         "role": "Mobile Application Engineer"
+      },
+      {
+        "name": "Agus Setiawan",
+        "role": "Front End Engineer"
       },
       {
         "name": "Jonathan Chang",
