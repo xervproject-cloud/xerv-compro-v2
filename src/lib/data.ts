@@ -46,8 +46,22 @@ export function getWorksIndex(): Work[] {
   return [...featured, ...rest];
 }
 
-export function getRelatedWorks(slug: string, limit = 4): Work[] {
-  return works.filter((work) => work.slug !== slug).slice(0, limit);
+/** Previous and next project in the works index order, wrapping at both ends. */
+export function getAdjacentWorks(slug: string): Work[] {
+  const order = getWorksIndex();
+  const i = order.findIndex((work) => work.slug === slug);
+  if (i === -1 || order.length < 2) return [];
+  const n = order.length;
+  const prev = order[(i - 1 + n) % n];
+  const next = order[(i + 1) % n];
+  return prev === next ? [next] : [prev, next];
+}
+
+export function serviceLabel(work: Work): string {
+  const names = work.services
+    .map((id) => services.find((service) => service.id === id)?.short)
+    .filter(Boolean);
+  return names.join(" · ") || work.scope;
 }
 
 export function getServices(): Service[] {

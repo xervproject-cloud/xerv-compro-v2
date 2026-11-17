@@ -1,5 +1,4 @@
-import { ArrowIcon } from "@/components/shell/ArrowIcon";
-import { imagesAttr, workHref } from "@/lib/data";
+import { serviceLabel, workHref } from "@/lib/data";
 import type { Work } from "@/lib/types";
 
 type WorkRelatedProps = {
@@ -8,31 +7,31 @@ type WorkRelatedProps = {
 
 export function WorkRelated({ related }: WorkRelatedProps) {
   return (
-    <section className="section" data-tone-start="#0A0718" data-tone-end="#0A0718">
+    <section
+      className="section cs-section cs-more-section"
+      data-tone-start="#0A0718"
+      data-tone-end="#0A0718"
+    >
       <header className="section-head">
         <p className="eyebrow">More case studies</p>
-        <h2 className="title">Keep reading.</h2>
+        <h2 className="title">Next in the index.</h2>
       </header>
-      <ul className="rest-list">
+      <div className="cs-more">
         {related.map((item) => (
-          <li key={item.slug}>
-            <a
-              className="rest-row"
-              href={workHref(item.slug)}
-              data-images={imagesAttr(item.images)}
-            >
-              <span
-                className="rest-shot"
-                style={{ backgroundImage: `url(${item.images[0]})` }}
-              />
-              <span className="rest-name">{item.short}</span>
-              <span className="rest-role">{item.role}</span>
-              <span className="rest-year">{item.year}</span>
-              <ArrowIcon />
-            </a>
-          </li>
+          <a key={item.slug} className="cs-more-card" href={workHref(item.slug)}>
+            <span
+              className="cs-more-shot"
+              style={{ backgroundImage: `url(${item.images[0]})` }}
+            />
+            <span className="cs-more-meta">
+              {serviceLabel(item)} — {item.year}
+            </span>
+            <strong>{item.name}</strong>
+            <span className="cs-more-dek">{item.home}</span>
+            <span className="cs-more-go">See the case study</span>
+          </a>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
