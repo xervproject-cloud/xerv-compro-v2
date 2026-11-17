@@ -26,7 +26,7 @@ export function WorkOverview({ work }: WorkOverviewProps) {
           <li key={chip}>{chip}</li>
         ))}
       </ul>
-      <figure className="cs-hero-fig">
+      <figure className="cs-hero-shot">
         <img className="cs-hero-img" src={work.images[0]} alt="" data-bridge-target />
       </figure>
     </section>

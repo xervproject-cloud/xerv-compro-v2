@@ -56,7 +56,7 @@ export function HomeWork() {
                   <h3 className="slide-name">{work.short}</h3>
                   <p className="slide-copy">{work.home}</p>
                   <a className="slide-go" href={href}>
-                    View case study
+                    See the project
                     <ArrowIcon />
                   </a>
                 </article>
